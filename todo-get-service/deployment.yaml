@@ -14,9 +14,10 @@ spec:
     spec:
       containers:
       - name: get
-        image: heroacr007.azurecr.io/todo-get:v1
+        image: todoappconatinerregistry.azurecr.io/todo-ui-service:v2
         ports:
         - containerPort: 8000
         env:
         - name: CONNECTION_STRING
           value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:heromssqlserver007.database.windows.net,1433;Database=heromssqldb007;Uid=achinta;Pwd=Raju@834068;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+
