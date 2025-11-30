@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: ui
-  replicas: 3
+  replicas: 5
   template:
     metadata:
       labels:
@@ -14,9 +14,10 @@ spec:
     spec:
       containers:
       - name: ui
-        image: heroacr007.azurecr.io/todo-ui:v1
+        image: todoappconatinerregistry.azurecr.io/todo-ui-service:v2
         ports:
         - containerPort: 80
         # env:
         # - name: CONNECTION_STRING
         #   value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:heromssqlserver007.database.windows.net,1433;Database=heromssqldb007;Uid=achinta;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+
