@@ -23,7 +23,7 @@ jobs:
         run: az aks get-credentials --resource-group todo-aks-rg --name todo-aks-aks --overwrite-existing
 
       - name: deploy add
-        working-directory: manifests-yml/todo-add-service
+        working-directory: menifests-yml/todo-add-service
         run: | 
           kubectl apply -f deployment.yaml -n todo --validate=false
           kubectl apply -f service.yaml -n todo --validate=false
