@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: todo-add-service
+  labels:
+    app: todo-add-service
+spec:
+  ingressClassName: todo-aks-appgw
+  rules:
+  - host: todo-add-service.site
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: add
+            port: 
+              number: 80

@@ -1,23 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: add
+  name: todo-add-service
 spec:
   selector:
     matchLabels:
-      app: add
+      app: todo-add-service
   replicas: 3
   template:
     metadata:
       labels:
-        app: add
+        app: todo-add-service
     spec:
       containers:
-      - name: add
-        image: todoappconatinerregistry.azurecr.io/todo-ui-service:v2
+      - name: todo-add-service
+        image: todoaksacrspsingh.azurecr.io/todo-add-service:v1
         ports:
         - containerPort: 8000
         env:
         - name: CONNECTION_STRING
-          value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:heromssqlserver007.database.windows.net,1433;Database=heromssqldb007;Uid=achinta;Pwd=Raju@834068;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+          value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:todo-aksmssqlserver007.database.windows.net,1433;Database=todo-aksmssqldb007;Uid=achinta;Pwd=Satya@834068;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
 
+#Driver={ODBC Driver 18 for SQL Server};Server=tcp:todo-aksmssqlserver007.database.windows.net,1433;Database=todo-aksmssqldb007;Uid=achinta;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+#Satya@834068
+#Driver={ODBC Driver 18 for SQL Server};Server=tcp:todo-aksmssqlserver007.database.windows.net,1433;Database=todo-aksmssqldb007;Uid=achinta;Pwd=Satya@834068;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;

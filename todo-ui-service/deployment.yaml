@@ -1,23 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ui
+  name: todo-ui-service
 spec:
   selector:
     matchLabels:
-      app: ui
+      app: todo-ui-service
   replicas: 5
   template:
     metadata:
       labels:
-        app: ui
+        app: todo-ui-service
     spec:
       containers:
-      - name: ui
-        image: todoappconatinerregistry.azurecr.io/todo-ui-service:v2
+      - name: todo-ui-service
+        image: todoappconatinerregistry.azurecr.io/todo-ui-service:v1
         ports:
         - containerPort: 80
-        # env:
-        # - name: CONNECTION_STRING
-        #   value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:heromssqlserver007.database.windows.net,1433;Database=heromssqldb007;Uid=achinta;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
 

@@ -1,18 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: myingress
+  name: todo-ui-service
   labels:
-    app.kubernetes.io/name: myingress
+    app: todo-ui-service
 spec:
+  ingressClassName: todo-aks-appgw
   rules:
-  - host: <Host>
+  - host: todo-ui-service.site
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: <Service>
+            name: todo-ui-service
             port: 
-              number: <Port>
+              number: 80

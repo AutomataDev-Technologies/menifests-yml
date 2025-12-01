@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: todo-delete-service
+  labels:
+    app: todo-delete-service
+spec:
+  ingressClassName: todo-aks-appgw
+  rules:
+  - host: todo-delete-service.site
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: delete
+            port: 
+              number: 80
