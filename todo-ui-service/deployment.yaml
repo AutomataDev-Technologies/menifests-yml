@@ -14,9 +14,10 @@ spec:
     spec:
       containers:
       - name: todo-ui-service
-        image: todoappconatinerregistry.azurecr.io/todo-ui-service:v2
+        image: todoaksacrspsingh.azurecr.io/todo-ui-service:v1
         ports:
         - containerPort: 80
+
 
 
 
