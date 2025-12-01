@@ -23,25 +23,25 @@ jobs:
         run: az aks get-credentials --resource-group todo-aks-rg --name todo-aks-aks --overwrite-existing
 
       - name: deploy add
-        working-directory: menifests-yml/todo-add-service
+        working-directory: todo-add-service
         run: | 
           kubectl apply -f deployment.yaml -n todo --validate=false
           kubectl apply -f service.yaml -n todo --validate=false
           kubectl apply -f ingress.yaml -n todo --validate=false
       - name: deploy get
-        working-directory: menifests-yml/todo-get-service
+        working-directory: todo-get-service
         run: | 
           kubectl apply -f deployment.yaml -n todo --validate=false
           kubectl apply -f service.yaml -n todo --validate=false
           kubectl apply -f ingress.yaml -n todo --validate=false
       - name: deploy delete
-        working-directory: menifests-yml/todo-delete-service
+        working-directory: todo-delete-service
         run: | 
           kubectl apply -f deployment.yaml -n todo --validate=false
           kubectl apply -f service.yaml -n todo --validate=false
           kubectl apply -f ingress.yaml -n todo --validate=false
       - name: deploy ui
-        working-directory: menifests-yml/todo-ui-service
+        working-directory: todo-ui-service
         run: | 
           kubectl apply -f deployment.yaml -n todo --validate=false
           kubectl apply -f service.yaml -n todo --validate=false
